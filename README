@@ -9,6 +9,7 @@ git clone https://github.com/Rija-ribeiro/tile.git
 
 Maintenant, vous pouvez modifier le projet sur votre ordi...
 Et executer la commande si dessous pour "enregistrer/valider" vos modifs
+git add .
 git commit -m "initialise avec un projet godot vide"
 
 Enfin, vous pouvez envoyer toutes vos modifications par gros paquets au seveur github avec :
