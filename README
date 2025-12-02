@@ -1,1 +1,33 @@
-test de readme
+
+la première fois il faut initializer son projet :
+git config --global user.name "ton nom d'utilisateur"
+git config --global user.email "tonadresse@tonmail.com"
+
+
+Ensuite, il faut copier ce projet sur votre ordi:
+git clone https://github.com/Rija-ribeiro/tile.git
+
+Maintenant, vous pouvez modifier le projet sur votre ordi...
+Et executer la commande si dessous pour "enregistrer/valider" vos modifs
+git commit -m "initialise avec un projet godot vide"
+
+Enfin, vous pouvez envoyer toutes vos modifications par gros paquets au seveur github avec :
+git push origin master
+
+Normalement il vous demandera un identifiant et un mot de pass.
+Id : celui de votre compte github (moi c'est Rija-ribeiro)
+pass :
+  - allez sur votre comte git hub (dans le navigateur)
+  - cliquez sur votre photo de profil (en haut à droite)
+  - cliquez sur settings
+  - dans le menu à gauche cliquez sur developer settings
+  - dans le menu à gauche cliquez sur Personal acces token -> token (classic)
+  - generate a new token
+  - generate a new token (classic)
+  - entrez votre mot de pass git github
+  - donnez un nom à votre token (ex: mon super premier token)
+  - cochez repo
+  - cliquez en bas generate token
+  - copiez le token (un super long code)
+  - gardez le précieusement (on ne vous le redonnera pas)
+  - utilisez le comme mdp
