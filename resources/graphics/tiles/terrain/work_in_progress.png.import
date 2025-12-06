@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq1p4rrr34xb4"
-path="res://.godot/imported/pierre.png-a9357caf1685886487ec27ad5074cd43.ctex"
+uid="uid://blrfi3b068rle"
+path="res://.godot/imported/work_in_progress.png-eaec8becb7445a22283ed7b21ae45835.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/graphics/tiles/pierre.png"
-dest_files=["res://.godot/imported/pierre.png-a9357caf1685886487ec27ad5074cd43.ctex"]
+source_file="res://resources/graphics/tiles/terrain/work_in_progress.png"
+dest_files=["res://.godot/imported/work_in_progress.png-eaec8becb7445a22283ed7b21ae45835.ctex"]
 
 [params]
 

@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.5", "Mobile")
 
 [display]
 
-mouse_cursor/custom_image="uid://b1mwcqlxdfv0g"
+mouse_cursor/custom_image="uid://dcqbqn3ehs2c0"
 
 [rendering]
 
