@@ -1,4 +1,4 @@
-
+#Windows et Linux------------------------------------------------
 la première fois il faut initializer son projet :
 git config --global user.name "ton nom d'utilisateur"
 git config --global user.email "tonadresse@tonmail.com"
@@ -8,16 +8,20 @@ Ensuite, il faut copier ce projet sur votre ordi:
 git clone https://github.com/Rija-ribeiro/tile.git
 
 avant chaque session de travail, executer la commande si dessous pour mettre à jour les modifications des autres utilisateurs :
-git pull
+git pull origin master
 
 Maintenant, vous pouvez modifier le projet sur votre ordi...
 Et executer la commande si dessous pour "enregistrer/valider" vos modifs
 git add .
-git commit -m "initialise avec un projet godot vide"
+git commit -m "[commentaire]"
 
 Enfin, vous pouvez envoyer toutes vos modifications par gros paquets au seveur github avec :
 git push origin master
 
+#Windows-------------------------------------------------------
+Une fenêtre souvre et propose de se connecter à via le navigateur internet
+
+#Linux---------------------------------------------------------
 Normalement il vous demandera un identifiant et un mot de pass.
 Id : celui de votre compte github (moi c'est Rija-ribeiro)
 pass :
