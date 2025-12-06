@@ -7,6 +7,9 @@ git config --global user.email "tonadresse@tonmail.com"
 Ensuite, il faut copier ce projet sur votre ordi:
 git clone https://github.com/Rija-ribeiro/tile.git
 
+avant chaque session de travail, executer la commande si dessous pour mettre à jour les modifications des autres utilisateurs :
+git pull
+
 Maintenant, vous pouvez modifier le projet sur votre ordi...
 Et executer la commande si dessous pour "enregistrer/valider" vos modifs
 git add .
