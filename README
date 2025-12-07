@@ -1,25 +1,26 @@
+__________________________________________________[AU SUJET DES EXPORTS SUR GITHUB]___________________________________________________
 #Windows et Linux------------------------------------------------
 la première fois il faut initializer son projet :
 git config --global user.name "ton nom d'utilisateur"
 git config --global user.email "tonadresse@tonmail.com"
 
-
 Ensuite, il faut copier ce projet sur votre ordi:
 git clone https://github.com/Rija-ribeiro/tile.git
 
-avant chaque session de travail, executer la commande si dessous pour mettre à jour les modifications des autres utilisateurs :
+[TRES IMPORTANT] --- Avant chaque session de travail, executer la commande si dessous pour mettre à jour les modifications des autres utilisateurs :
 git pull origin master
 
 Maintenant, vous pouvez modifier le projet sur votre ordi...
-Et executer la commande si dessous pour "enregistrer/valider" vos modifs
+Et executer la commande si dessous pour enregistrer vos modifications
 git add .
 git commit -m "[commentaire]"
+[L'UTILISATION DES COMMENTAIRE EST TRES IMPORTANTE VEILLEZ A TOUJOURS PRECISEZ LES MODIFICATIONS APPORTE AU CODE.]
 
 Enfin, vous pouvez envoyer toutes vos modifications par gros paquets au seveur github avec :
 git push origin master
 
 #Windows-------------------------------------------------------
-Une fenêtre souvre et propose de se connecter à via le navigateur internet
+Une fenêtre souvre et propose de se connecter à via le navigateur internet.
 
 #Linux---------------------------------------------------------
 Normalement il vous demandera un identifiant et un mot de pass.
@@ -38,4 +39,11 @@ pass :
   - cliquez en bas generate token
   - copiez le token (un super long code)
   - gardez le précieusement (on ne vous le redonnera pas)
-  - utilisez le comme mdp
+  - utilisez le comme mot de passe
+_______________________________________________[AU SUJET DES NORMES GRAPHIQUES]____________________________________________
+Taille pour une Tile : 32px X 32px
+Extention de fichier préférencielle: .PNG
+Style: Pixel art
+
+
+
