@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gmja8k6nad2i"
-path="res://.godot/imported/copper_ore_01.png-a2f342e531324d5dd7507a03695e8e68.ctex"
+uid="uid://ho5735xo81q7"
+path="res://.godot/imported/coper_ore_covered_by_stone_down_01.png-38d442de2085b5792b974355ec3ca01d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/terrain/copper_ore_01.png"
-dest_files=["res://.godot/imported/copper_ore_01.png-a2f342e531324d5dd7507a03695e8e68.ctex"]
+source_file="res://assets/graphics/tiles/terrain/coper_ore/cover_by_stone_01/coper_ore_covered_by_stone_down_01.png"
+dest_files=["res://.godot/imported/coper_ore_covered_by_stone_down_01.png-38d442de2085b5792b974355ec3ca01d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baffmhgmqt3"
-path="res://.godot/imported/sand_01.png-3a97c1a24e1e1857f95cc25fedecc585.ctex"
+uid="uid://h4lou2h2gn65"
+path="res://.godot/imported/coper_ore_covered_by_sand_down_right_and_up_01.png-ea4d1d888294ff4f4cf8149eec2dd930.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tiles/terrain/sand_01.png"
-dest_files=["res://.godot/imported/sand_01.png-3a97c1a24e1e1857f95cc25fedecc585.ctex"]
+source_file="res://assets/graphics/tiles/terrain/coper_ore/cover_by_sand_01/coper_ore_covered_by_sand_down_right_and_up_01.png"
+dest_files=["res://.godot/imported/coper_ore_covered_by_sand_down_right_and_up_01.png-ea4d1d888294ff4f4cf8149eec2dd930.ctex"]
 
 [params]
 
