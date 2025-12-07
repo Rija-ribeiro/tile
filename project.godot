@@ -13,6 +13,8 @@ config_version=5
 config/name="tile"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
+config/icon="uid://cco55ngdfxw1"
+config/windows_native_icon="res://assets/graphics/icon/icon.ico"
 
 [display]
 
