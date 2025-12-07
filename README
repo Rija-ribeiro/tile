@@ -1,4 +1,4 @@
-__________________________________________________[AU SUJET DES EXPORTS SUR GITHUB]___________________________________________________
+[AU SUJET DES EXPORTS SUR GITHUB]________________________________________________
 #Windows et Linux------------------------------------------------
 la première fois il faut initializer son projet :
 git config --global user.name "ton nom d'utilisateur"
@@ -40,7 +40,8 @@ pass :
   - copiez le token (un super long code)
   - gardez le précieusement (on ne vous le redonnera pas)
   - utilisez le comme mot de passe
-_______________________________________________[AU SUJET DES NORMES GRAPHIQUES]____________________________________________
+
+[AU SUJET DES NORMES GRAPHIQUES]_____________________________________________________
 Taille pour une Tile : 32px X 32px
 Extention de fichier préférencielle: .PNG
 Style: Pixel art
