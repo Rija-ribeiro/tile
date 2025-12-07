@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcqbqn3ehs2c0"
-path="res://.godot/imported/red_arrow.png-89831313f64f4b1b3de20197d89446df.ctex"
+uid="uid://cd1ixlgi3b5pa"
+path="res://.godot/imported/iron_ore_01.png-f8542318e4cd2c292256107c792967f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/graphics/cursors/red_arrow.png"
-dest_files=["res://.godot/imported/red_arrow.png-89831313f64f4b1b3de20197d89446df.ctex"]
+source_file="res://assets/graphics/tiles/terrain/iron_ore_01.png"
+dest_files=["res://.godot/imported/iron_ore_01.png-f8542318e4cd2c292256107c792967f0.ctex"]
 
 [params]
 

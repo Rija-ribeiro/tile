@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameResource" load_steps=3 format=3 uid="uid://ddv3jmqxeedrm"]
+
+[ext_resource type="Texture2D" uid="uid://bjabbpo1huas2" path="res://assets/graphics/tiles/terrain/coper_ore_covered_by_sand_right_and_up_01.png" id="1_c0ome"]
+[ext_resource type="Script" uid="uid://d1m5fu7sonjou" path="res://scripts/classes/GameResource.gd" id="1_ggay4"]
+
+[resource]
+script = ExtResource("1_ggay4")
+name = "copper"
+icon = ExtResource("1_c0ome")
+metadata/_custom_type_script = "uid://d1m5fu7sonjou"

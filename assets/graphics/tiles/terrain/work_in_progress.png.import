@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bef21w1t18b1c"
-path="res://.godot/imported/foundry.png-17e33b87a296b9274696b46253a095d9.ctex"
+uid="uid://blrfi3b068rle"
+path="res://.godot/imported/work_in_progress.png-c97aa4e4792892722b6e5a099110653d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/graphics/tiles/building/foundry.png"
-dest_files=["res://.godot/imported/foundry.png-17e33b87a296b9274696b46253a095d9.ctex"]
+source_file="res://assets/graphics/tiles/terrain/work_in_progress.png"
+dest_files=["res://.godot/imported/work_in_progress.png-c97aa4e4792892722b6e5a099110653d.ctex"]
 
 [params]
 

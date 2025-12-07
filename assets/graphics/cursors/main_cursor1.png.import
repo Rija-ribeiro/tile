@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blrfi3b068rle"
-path="res://.godot/imported/work_in_progress.png-eaec8becb7445a22283ed7b21ae45835.ctex"
+uid="uid://djopysthxugi2"
+path="res://.godot/imported/main_cursor1.png-b42ee262aca550e81e2eadfb5d5affe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/graphics/tiles/terrain/work_in_progress.png"
-dest_files=["res://.godot/imported/work_in_progress.png-eaec8becb7445a22283ed7b21ae45835.ctex"]
+source_file="res://assets/graphics/cursors/main_cursor1.png"
+dest_files=["res://.godot/imported/main_cursor1.png-b42ee262aca550e81e2eadfb5d5affe3.ctex"]
 
 [params]
 
