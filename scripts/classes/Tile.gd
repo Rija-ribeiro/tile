@@ -12,7 +12,12 @@ var pos:Vector2i:
 ## le rectangle occupé par la tuile
 var rec:Rect2i:
 	set(value): set_and_warn_int(&"rec", value)
-func get_rec() -> Rect2i: return Rect2i(pos, def.size)
+## le périmètre du rectangle qu'occupe la tuile
+var perimeter:int:
+	set(value): set_and_warn_int(&"perimeter", value)
+## la liste des position de toutes les tuiles voisines à celle-ci
+var neighbors_pos:Array[Vector2i]:
+	set(value): set_and_warn_int(&"neighbors_pos", value)
 ## le TileEngine dans lequel est ajouté
 var tile_engine:TileEngine:
 	set(value): set_and_warn_int(&"tile_engine", value)
@@ -32,3 +37,23 @@ func set_and_warn_int(property:StringName, value):
 		)
 	else:
 		set(property, value)
+
+## initialisation générale de la tuile
+func _tile_init() -> void:
+	rec = Rect2i(pos, def.size)
+	perimeter = 2*(def.size.x+def.size.x)
+	for x in def.size.x:
+		# toutes les voisines du haut
+		neighbors_pos.append(pos+Vector2i(-1, x))
+		# toutes les voisines du bas
+		neighbors_pos.append(pos+Vector2i(def.size.y, x))
+	for y in def.size.y:
+		# toutes les voisines de gauche
+		neighbors_pos.append(pos+Vector2i(-1, y))
+		# toutes les voisines de droite
+		neighbors_pos.append(pos+Vector2i(def.size.x, y))
+	is_init = true
+
+## renvoie la n-ième tuile voisine
+func get_neighbor(n:int) -> Tile:
+	return tile_engine.search_from_pos(neighbors_pos[posmod(n, perimeter)])
