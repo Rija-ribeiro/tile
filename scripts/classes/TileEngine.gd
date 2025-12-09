@@ -2,15 +2,15 @@
 class_name TileEngine extends Resource
 var tiles:Array[Tile]
 
-## revoie la tuile occupant la position donnée
+## Revoie la tuile occupant la position donnée.
 func search_from_pos(pos:Vector2i) -> Tile:
 	for tile in tiles:
 		if tile.rect.has_point(pos):
 			return tile
 	return null
 
-## renvoie les tuiles touchant le rectangle donné
-## utile pour selectionner les tuiles ou pour savoir si une tuile peut être à un emplacement
+## Renvoie les tuiles touchant le rectangle donné.
+## Utile pour selectionner les tuiles ou pour savoir si une tuile peut être à un emplacement.
 func search_from_rec(rec:Rect2i) -> Array[Tile]:
 	var result:Array[Tile]
 	for tile in tiles:
@@ -18,13 +18,19 @@ func search_from_rec(rec:Rect2i) -> Array[Tile]:
 			result.append(tile)
 	return result
 
-## retourne si une tuile de ce type peut ou non être placé à cette position.
+## Retourne si une tuile de ce type peut ou non être placé à cette position.
 func can_add(def:TileDef, pos:Vector2i) -> bool:
 	return search_from_rec(Rect2i(pos, def.size)).is_empty()
 
-## essay d'ajouter la tuile et renvoie une erreur si celle si manque de place.
+## Essay d'ajouter la tuile et renvoie une erreur si celle si manque de place.
 func add(tile:Tile) -> Error:
 	if can_add(tile.def, tile.pos):
+		tile.tile_engine = self
 		tiles.append(tile)
 		return OK
 	return FAILED
+
+## Cette méthode permet de mettre à jour toutes les tuiles présentes dans TileEngine.
+func update() -> void:
+	for tile in tiles:
+		tile.def.update(tile)

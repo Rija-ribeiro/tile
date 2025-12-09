@@ -10,3 +10,7 @@ class_name TileDef extends Resource
 @export var size:Vector2i
 ## Le stokage maximal de la tuile
 @export var max_storage:Dictionary[GameResource, int]
+
+## Surcharger cette méthode pour définire le comportement de la tuile à chaque
+## update de son TileEngine.
+func update(tile:Tile) -> void: pass
