@@ -25,10 +25,16 @@ func can_add(def:TileDef, pos:Vector2i) -> bool:
 ## Essay d'ajouter la tuile et renvoie une erreur si celle si manque de place.
 func add(tile:Tile) -> Error:
 	if can_add(tile.def, tile.pos):
-		tile.tile_engine = self
 		tiles.append(tile)
+		tile.tile_engine = self
+		tile._enter_engine()
 		return OK
 	return FAILED
+
+## détruit la tuile donée
+func remove(tile:Tile) -> void:
+	tile._exit_engine()
+	tiles.erase(tile)
 
 ## Cette méthode permet de mettre à jour toutes les tuiles présentes dans TileEngine.
 func update() -> void:

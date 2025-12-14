@@ -2,19 +2,34 @@
 class_name Tile extends Resource
 
 var is_init:bool:
-	set(value): set_and_warn_init(&"is_int", value)
+	set(value):
+		if not warn_init("is_init"):
+			is_init = value
 ## définition de la tuile
 var def:TileDef:
-	set(value): set_and_warn_init(&"def", value)
+	set(value):
+		if not warn_init("def"):
+			def = value
 ## position de la tuile
 var pos:Vector2i:
-	set(value): set_and_warn_init(&"pos", value)
+	set(value):
+		if not warn_init("pos"):
+			pos = value
 ## le rectangle occupé par la tuile
-var rec:Rect2i:
-	set(value): set_and_warn_init(&"rec", value)
+var rect:Rect2i:
+	set(value):
+		if not warn_init("rec"):
+			rect = value
+	get():
+		if is_init:
+			return rect
+		else:
+			return Rect2i(pos, def.size)
 ## le TileEngine dans lequel est ajouté
 var tile_engine:TileEngine:
-	set(value): set_and_warn_init(&"tile_engine", value)
+	set(value):
+		if not warn_init("tile_engine"):
+			tile_engine = value
 ## la liste des position de toutes les tuiles voisines à celle-ci
 var neighbors:Array[Tile]
 ## les ressources actuellements stocké dans cette tuile
@@ -22,47 +37,47 @@ var storage:Dictionary[GameResource, int]
 
 ## Utiliser cette methode pour modifier une propriété de la tuile et produire
 ## une erreur si elle est déjà initialisé
-func set_and_warn_init(property:StringName, value) -> void:
+func warn_init(property:String) -> bool:
 	if is_init:
 		push_error(
 			"failed to set "
-			+str(property)
-			+" to "
-			+str(value)
+			+property
 			+" because this tile is already init"
 		)
-	else:
-		set(property, value)
+	return is_init
 
 ## initialisation générale de la tuile
 func _enter_engine() -> void:
-	rec = Rect2i(pos, def.size)
-	perimeter = 2*(def.size.x+def.size.x)
-	
-	# contient les positions de toutes les voisines (q'uelles existent ou non)
-	var neighbor_pos:Array[Vector2i]
-	for x in def.size.x:
-		# toutes les voisines du haut
-		neighbor_pos.append(pos+Vector2i(-1, x))
-		# toutes les voisines du bas
-		neighbor_pos.append(pos+Vector2i(def.size.y, x))
-	for y in def.size.y:
-		# toutes les voisines de gauche
-		neighbor_pos.append(pos+Vector2i(-1, y))
-		# toutes les voisines de droite
-		neighbor_pos.append(pos+Vector2i(def.size.x, y))
-	for position in neighbor_pos:
-		var tile := tile_engine.search_from_pos(position)
-		neighbors.append(tile)
-		if is_instance_valid(tile):
-			pass #TODO faire en sorte que cette tuile prenne connaissance de soit comme une voisine
+	rect = Rect2i(pos, def.size)
+	_update_neighbor()
+	for neighbor in neighbors:
+		if is_instance_valid(neighbor):
+			neighbor._update_neighbor()
 	is_init = true
 
+func _exit_engine() -> void:
+	for tile in neighbors:
+		if is_instance_valid(tile):
+			for index in tile.get_neighbor_indexs(self):
+				tile.neighbors[index] = null
+
+func _update_neighbor() -> void:
+	neighbors = []
+	for x in def.size.x:
+		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(x, -1)))
+		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(x, def.size.y)))
+	for y in def.size.y:
+		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(-1, y)))
+		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(def.size.x, y)))
 
 ## renvoie la n-ième tuile voisine
 func get_neighbor(n:int) -> Tile:
-	return neighbors[posmod(n, perimeter)]
+	return neighbors[posmod(n, def.perimeter)]
 
 ## renvoie l'index-voisin de la tuile. renvoie -1 si la tuile n'est pas voisine.
-func get_neighbor_index(tile:Tile) -> int:
-	return neighbors.find(tile)
+func get_neighbor_indexs(tile:Tile) -> Array[int]:
+	var result:Array[int]
+	for i in def.perimeter:
+		if neighbors[i]==tile:
+			result.append(i)
+	return result
