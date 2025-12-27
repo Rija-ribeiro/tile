@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+# test
+test/
+# dossier d'exports binaires
+bin/
