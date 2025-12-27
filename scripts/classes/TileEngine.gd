@@ -39,4 +39,4 @@ func remove(tile:Tile) -> void:
 ## Cette méthode permet de mettre à jour toutes les tuiles présentes dans TileEngine.
 func update() -> void:
 	for tile in tiles:
-		tile.def.update(tile)
+		tile.def._update(tile)

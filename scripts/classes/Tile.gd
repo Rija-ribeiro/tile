@@ -15,6 +15,10 @@ var pos:Vector2i:
 	set(value):
 		if not warn_init("pos"):
 			pos = value
+var rotation:int:
+	set(value):
+		if not warn_init("rec"):
+			rotation = posmod(value, 4)
 ## le rectangle occupé par la tuile
 var rect:Rect2i:
 	set(value):
@@ -23,6 +27,9 @@ var rect:Rect2i:
 	get():
 		if is_init:
 			return rect
+		elif rotation%2:
+			# si il est tourné de 90 ou -90 deg, on inverse les composantes.
+			return Rect2i(pos, Vector2i(def.size.y, def.size.x))
 		else:
 			return Rect2i(pos, def.size)
 ## le TileEngine dans lequel est ajouté
@@ -48,7 +55,8 @@ func warn_init(property:String) -> bool:
 
 ## initialisation générale de la tuile
 func _enter_engine() -> void:
-	rect = Rect2i(pos, def.size)
+	# on remplie la varriable rct avec la valeur fourie par sont getter.
+	rect = rect
 	_update_neighbor()
 	for neighbor in neighbors:
 		if is_instance_valid(neighbor):
@@ -61,6 +69,8 @@ func _exit_engine() -> void:
 			for index in tile.get_neighbor_indexs(self):
 				tile.neighbors[index] = null
 
+## cette fonction sert à reprendre connaissance des tuiles voisines. Elle est 
+## utile à l'initialisation et à la création et supression des tuiles voisines.
 func _update_neighbor() -> void:
 	neighbors = []
 	for x in def.size.x:

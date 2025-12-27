@@ -3,22 +3,25 @@
 ## ex: usine, mine, convoyeur...
 class_name TileDef extends Resource
 
-## le nom du type de tuile
+## Le nom du type de tuile
 @export var name:String
-## image de représentation de la tuile
+## Image de représentation de la tuile
 @export var texture:Texture
 ## La taille de la tuile (en tuile)
 @export var size:Vector2i:
 	set(value):
 		size = value
 		perimeter = 2*value.x+2*value.y
-## le périmètre du rectangle qu'occupe la tuile
+## Le périmètre du rectangle qu'occupe la tuile
 @export_storage var perimeter:int
-## Le stokage maximal de la tuile
-@export var max_storage:Dictionary[GameResource, int]
+
+
+## Surcharger cette fonction pour définire si la tuile accepte ou regette la
+## GameResource qui lui est proposé.
+@warning_ignore("unused_parameter")
+func accept(res:GameResource, tile:Tile, from:Tile) -> bool: return false
 
 ## Surcharger cette méthode pour définire le comportement de la tuile à chaque
 ## update de son TileEngine.
+@warning_ignore("unused_parameter")
 func update(tile:Tile) -> void: pass
-
-func accept(res:GameResource, from:Tile): pass

@@ -20,6 +20,17 @@ config/windows_native_icon="res://assets/graphics/icon/icon.ico"
 
 mouse_cursor/custom_image="uid://dcqbqn3ehs2c0"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "green",
+"res://bin/": "purple",
+"res://resources/": "yellow",
+"res://scenes/": "orange",
+"res://scripts/": "red",
+"res://test/": "purple"
+}
+
 [rendering]
 
 renderer/rendering_method="mobile"
