@@ -72,6 +72,7 @@ func _update_neighbor() -> void:
 
 ## renvoie la n-ième tuile voisine
 func get_neighbor(n:int) -> Tile:
+	Noise
 	return neighbors[posmod(n, def.perimeter)]
 
 ## renvoie l'index-voisin de la tuile. renvoie -1 si la tuile n'est pas voisine.
