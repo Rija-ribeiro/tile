@@ -72,13 +72,16 @@ func _exit_engine() -> void:
 ## cette fonction sert à reprendre connaissance des tuiles voisines. Elle est 
 ## utile à l'initialisation et à la création et supression des tuiles voisines.
 func _update_neighbor() -> void:
-	neighbors = []
+	var sides:Array[Array] = [[], [], [], []]
 	for x in def.size.x:
-		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(x, -1)))
-		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(x, def.size.y)))
+		sides[SIDE_TOP].append(tile_engine.search_from_pos(pos+Vector2i(x, -1)))
+		sides[SIDE_BOTTOM].append(tile_engine.search_from_pos(pos+Vector2i(x, def.size.y)))
 	for y in def.size.y:
-		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(-1, y)))
-		neighbors.append(tile_engine.search_from_pos(pos+Vector2i(def.size.x, y)))
+		sides[SIDE_LEFT].append(tile_engine.search_from_pos(pos+Vector2i(-1, y)))
+		sides[SIDE_RIGHT].append(tile_engine.search_from_pos(pos+Vector2i(def.size.x, y)))
+	neighbors = []
+	for i in 4:
+		neighbors.append_array(sides[posmod(i-rotation, 4)])
 
 ## renvoie la n-ième tuile voisine
 func get_neighbor(n:int) -> Tile:
