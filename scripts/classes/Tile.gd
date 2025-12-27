@@ -84,8 +84,8 @@ func _update_neighbor() -> void:
 		neighbors.append_array(sides[posmod(i-rotation, 4)])
 
 ## renvoie la n-ième tuile voisine
-func get_neighbor(n:int) -> Tile:
-	return neighbors[posmod(n, def.perimeter)]
+func get_neighbor(index:int) -> Tile:
+	return neighbors[posmod(index, def.perimeter)]
 
 ## renvoie l'index-voisin de la tuile. renvoie -1 si la tuile n'est pas voisine.
 func get_neighbor_indexs(tile:Tile) -> Array[int]:
@@ -94,3 +94,13 @@ func get_neighbor_indexs(tile:Tile) -> Array[int]:
 		if neighbors[i]==tile:
 			result.append(i)
 	return result
+
+##
+func give_to(res:GameResource, index:int) -> Error:
+	var neighbor := get_neighbor(index)
+	if not is_instance_valid(neighbor): return FAILED
+	if not neighbor.def.accept(res, neighbor, self): return FAILED
+	if storage[res] == 0: return FAILED
+	neighbor.storage[res] += 1
+	storage[res] -=1
+	return OK
