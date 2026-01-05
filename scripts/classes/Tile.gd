@@ -72,7 +72,7 @@ func _exit_engine() -> void:
 ## cette fonction sert à reprendre connaissance des tuiles voisines. Elle est 
 ## utile à l'initialisation et à la création et supression des tuiles voisines.
 func _update_neighbor() -> void:
-	var sides:Array[Array] = [[], [], [], []]
+	var sides:Array[Array] = [[], [], [], []] #HAUT,BAS,GAUCHE,DROITE
 	for x in def.size.x:
 		sides[SIDE_TOP].append(tile_engine.search_from_pos(pos+Vector2i(x, -1)))
 		sides[SIDE_BOTTOM].append(tile_engine.search_from_pos(pos+Vector2i(x, def.size.y)))

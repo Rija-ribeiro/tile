@@ -9,4 +9,5 @@ extends TileDef
 script = SubResource("GDScript_a8tty")
 name = "conveyor"
 size = Vector2i(1, 1)
+perimeter = 4
 metadata/_custom_type_script = "uid://csl07ntxuex2u"

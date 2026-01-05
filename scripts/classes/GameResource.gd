@@ -8,9 +8,9 @@ class_name GameResource extends Resource
 ## L'image de qui représente cette ressource.
 @export var icon:Texture
 
+@export_range(0, 1) var seuil:float
 @export var noise:FastNoiseLite
-@export_range(-1, 1) var plage:float
 
 func is_at(pos:Vector2i) -> bool:
 	var f = noise.get_noise_2dv(pos)
-	return f > plage
+	return f > seuil
